@@ -1,0 +1,19 @@
+* Denali Linux
+
+Denali Linux is a NixOS-based Linux distribution. It uses NixOS module
+system to build a Linux distribution suitable for desktop
+environments. Denali is built on top of the Plasma Desktop.
+
+** Todo List
+
+*** Art
+
+Themes, backgrounds, etc.
+
+*** Graphical installer
+
+Discussion at https://github.com/NixOS/nixpkgs/issues/21662.
+
+*** CI
+
+Build ISOs and OVAs.
