@@ -27,10 +27,10 @@
   };
   networking.firewall.enable = false;
   programs.zsh.enable = true;
-  virtualisation.virtualbox.host = {
-    enable = true;
-    enableExtensionPack = true;
-  };
+  # virtualisation.virtualbox.host = {
+  #   enable = true;
+  #   enableExtensionPack = true;
+  # };
   powerManagement.enable = true;
 
   services.xserver = {
