@@ -1,15 +1,25 @@
-{ config, pkgs, lib, ...  }:
+{ config, pkgs, lib, ... }:
 
 {
+  boot.tmpOnTmpfs = true;
+
   environment.systemPackages = with pkgs; [
+    git
+
     chromium remmina vlc
     gimp inkscape krita transmission-gtk
   ] ++ (with pkgs.kdeApplications; [
+    # kamoso
     okular ark dolphin dolphin-plugins k3b
     gwenview kwalletmanager kgpg akonadi akonadi-mime
     akonadi-search akonadiconsole spectacle konsole print-manager
     ksystemlog filelight kleopatra amarok
+    dragon
   ]);
+
+  services.colord.enable = true;
+
+  services.flatpak.enable = true;
 
   boot.cleanTmpDir = true;
   programs.ssh.startAgent = true;
@@ -36,10 +46,7 @@
   services.xserver = {
     enable = true;
     autorun = true;
-    libinput = {
-      enable = true;
-      disableWhileTyping = true;
-    };
+    libinput.enable = true;
     displayManager.sddm.enable = true;
     desktopManager.plasma5 = {
       enable = true;
@@ -60,5 +67,10 @@
       userServices = true;
     };
   };
+
+  powerManagement.cpuFreqGovernor = null;
+  services.tlp.enable = true;
+  services.fwupd.enable = true;
+  virtualisation.virtualbox.host.enable = true;
 
 }
