@@ -73,4 +73,6 @@
   services.fwupd.enable = true;
   virtualisation.virtualbox.host.enable = true;
 
+  services.earlyoom.enable = true;
+
 }
