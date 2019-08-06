@@ -14,7 +14,7 @@
     gwenview kwalletmanager kgpg akonadi akonadi-mime
     akonadi-search akonadiconsole spectacle konsole print-manager
     ksystemlog filelight kleopatra amarok
-    dragon
+    dragon kmail
   ]);
 
   services.colord.enable = true;
