@@ -4,7 +4,7 @@
   boot.tmpOnTmpfs = true;
 
   environment.systemPackages = with pkgs; [
-    git
+    git libnotify
 
     chromium remmina vlc
     gimp inkscape krita transmission-gtk
