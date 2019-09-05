@@ -2,6 +2,8 @@
 
 {
   boot.tmpOnTmpfs = true;
+  boot.cleanTmpDir = true;
+  boot.plymouth.enable = true;
 
   environment.systemPackages = with pkgs; [
     git libnotify
@@ -17,31 +19,28 @@
     dragon kmail
   ]);
 
-  services.colord.enable = true;
-
-  services.flatpak.enable = true;
-
-  boot.cleanTmpDir = true;
-  programs.ssh.startAgent = true;
-  programs.gnupg.agent.enable = true;
   nixpkgs.config.allowUnfree = true;
+
   hardware.enableRedistributableFirmware = true;
   hardware.bluetooth.enable = true;
-  boot.plymouth.enable = true;
+
+  services.earlyoom.enable = true;
+  powerManagement.enable = true;
+  services.tlp.enable = true;
+
+  services.flatpak.enable = true;
+  programs.ssh.startAgent = true;
+  programs.gnupg.agent.enable = true;
   networking.networkmanager.enable = true;
   fonts.enableDefaultFonts = true;
   fonts.enableFontDir = true;
+  services.colord.enable = true;
   services.printing = {
     enable = true;
     webInterface = false;
   };
   networking.firewall.enable = false;
   programs.zsh.enable = true;
-  # virtualisation.virtualbox.host = {
-  #   enable = true;
-  #   enableExtensionPack = true;
-  # };
-  powerManagement.enable = true;
 
   services.xserver = {
     enable = true;
@@ -62,17 +61,15 @@
   services.avahi = {
     enable = true;
     nssmdns = true;
+    extraServiceFiles = {
+      ssh = "${pkgs.avahi}/etc/avahi/services/ssh.service";
+    };
     publish = {
       enable = true;
       userServices = true;
     };
   };
 
-  powerManagement.cpuFreqGovernor = null;
-  services.tlp.enable = true;
   services.fwupd.enable = true;
   virtualisation.virtualbox.host.enable = true;
-
-  services.earlyoom.enable = true;
-
 }
