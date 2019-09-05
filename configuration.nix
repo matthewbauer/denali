@@ -16,7 +16,9 @@
     gwenview kwalletmanager kgpg akonadi akonadi-mime
     akonadi-search akonadiconsole spectacle konsole print-manager
     ksystemlog filelight kleopatra amarok
-    dragon kmail
+    dragon kmail kcalc konqueror akregator
+  ]) ++ (with pkgs.kdeFrameworks; [
+    baloo
   ]);
 
   nixpkgs.config.allowUnfree = true;
