@@ -16,7 +16,7 @@
     gwenview kwalletmanager kgpg akonadi akonadi-mime
     akonadi-search akonadiconsole spectacle konsole print-manager
     ksystemlog filelight kleopatra amarok
-    dragon kmail kcalc konqueror akregator
+    dragon kmail kcalc konqueror akregator kate
   ]) ++ (with pkgs.kdeFrameworks; [
     baloo
   ]);
