@@ -5,7 +5,8 @@ with import <nixpkgs/lib>;
 
 {
 
-  iso = forMatchingSystems [ "x86_64-linux" ] (system:
+  # Live CD (no installer currently!)
+  live_iso = forMatchingSystems supportedSystems (system:
     hydraJob ((import <nixpkgs/nixos/lib/eval-config.nix> {
       inherit system;
       modules = [
@@ -15,8 +16,19 @@ with import <nixpkgs/lib>;
       ];
     }).config.system.build.isoImage));
 
+  # Minimal installer ISO
+  installer_iso = forMatchingSystems supportedSystems (system:
+    hydraJob ((import <nixpkgs/nixos/lib/eval-config.nix> {
+      inherit system;
+      modules = [
+        <nixpkgs/nixos/modules/installer/cd-dvd/iso-image.nix>
+        ./demo.nix
+        ./installer.nix
+      ];
+    }).config.system.build.isoImage));
+
   # A bootable VirtualBox virtual appliance as an OVA file (i.e. packaged OVF).
-  ova = forMatchingSystems [ "x86_64-linux" ] (system:
+  ova = forMatchingSystems supportedSystems (system:
     hydraJob ((import <nixpkgs/nixos/lib/eval-config.nix> {
       inherit system;
       modules = [
