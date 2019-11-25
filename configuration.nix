@@ -14,6 +14,7 @@
     # kamoso
     okular ark dolphin dolphin-plugins k3b
     gwenview kwalletmanager kgpg akonadi akonadi-mime
+    ksshaskpass
     akonadi-search akonadiconsole spectacle konsole print-manager
     ksystemlog filelight kleopatra amarok
     dragon kmail kcalc konqueror akregator kate
