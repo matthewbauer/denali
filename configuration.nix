@@ -8,8 +8,13 @@
   environment.systemPackages = with pkgs; [
     git libnotify
 
-    chromium remmina vlc
-    gimp inkscape krita transmission-gtk
+    chromium
+    remmina vlc
+    gimp inkscape transmission-gtk
+    # blender krita
+
+    gnome3.adwaita-icon-theme
+    gnome3.gnome-keyring
   ] ++ (with pkgs.kdeApplications; [
     # kamoso
     okular ark dolphin dolphin-plugins k3b
@@ -50,10 +55,7 @@
     autorun = true;
     libinput.enable = true;
     displayManager.sddm.enable = true;
-    desktopManager.plasma5 = {
-      enable = true;
-      enableQt4Support = false;
-    };
+    desktopManager.plasma5.enable = true;
   };
 
   nix.distributedBuilds = true;
