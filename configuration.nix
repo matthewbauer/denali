@@ -79,7 +79,8 @@
   virtualisation.virtualbox.host.enable = true;
 
   nix.package = pkgs.nixUnstable;
-  nix.extraConfig = ''
+  nix.extraOptions = ''
     min-free = 10485760
+    experimental-features = nix-command flakes recursive-nix ca-references
   '';
 }
