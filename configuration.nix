@@ -76,7 +76,7 @@
   };
 
   services.fwupd.enable = true;
-  virtualisation.virtualbox.host.enable = true;
+  # virtualisation.virtualbox.host.enable = true;
 
   nix.package = pkgs.nixUnstable;
   nix.extraOptions = ''
