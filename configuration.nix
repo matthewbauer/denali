@@ -79,4 +79,7 @@
   virtualisation.virtualbox.host.enable = true;
 
   nix.package = pkgs.nixUnstable;
+  nix.extraConfig = ''
+    min-free = 10485760
+  '';
 }
