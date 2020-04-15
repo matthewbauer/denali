@@ -87,4 +87,6 @@
 
   boot.kernel.sysctl."kernel.sysrq" = 176;
 
+  services.localtime.enable = true;
+
 }
