@@ -80,7 +80,8 @@
 
   nix.package = pkgs.nixUnstable;
   nix.extraOptions = ''
-    min-free = ${toString (100 * 1024 * 1024)}
+    min-free = ${toString (1 * 1024 * 1024 * 1024)}
+    max-free = ${toString (5 * 1024 * 1024 * 1024)}
     experimental-features = nix-command flakes recursive-nix ca-references
   '';
 
