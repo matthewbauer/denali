@@ -80,7 +80,10 @@
 
   nix.package = pkgs.nixUnstable;
   nix.extraOptions = ''
-    min-free = 10485760
+    min-free = ${toString (100 * 1024 * 1024)}
     experimental-features = nix-command flakes recursive-nix ca-references
   '';
+
+  boot.kernel.sysctl."kernel.sysrq" = 176;
+
 }
