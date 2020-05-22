@@ -88,6 +88,7 @@
   '';
 
   boot.kernel.sysctl."kernel.sysrq" = 176;
+  boot.kernel.sysctl."vm.swappiness" = 1;
 
   services.localtime.enable = true;
 
