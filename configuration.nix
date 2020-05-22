@@ -89,4 +89,7 @@
 
   services.localtime.enable = true;
 
+  services.geoclue2.enable = true;
+  services.geoclue2.enableDemoAgent = false;
+
 }
