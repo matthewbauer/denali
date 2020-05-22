@@ -63,6 +63,7 @@
   services.openssh.enable = true;
   hardware.pulseaudio.enable = true;
   services.samba.enable = true;
+  services.samba.enableNmbd = false;
   services.avahi = {
     enable = true;
     nssmdns = true;
