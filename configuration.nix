@@ -8,7 +8,7 @@
   environment.systemPackages = with pkgs; [
     git libnotify
 
-    chromium
+    chromium firefox
     remmina vlc
     gimp inkscape transmission-gtk
     # blender krita
