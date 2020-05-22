@@ -35,6 +35,7 @@
   services.earlyoom.enable = true;
   powerManagement.enable = true;
   services.tlp.enable = true;
+  services.thermald.enable = true;
 
   services.flatpak.enable = true;
   programs.ssh.startAgent = true;
